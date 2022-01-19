@@ -63,6 +63,9 @@ def message(logger, event):
 
 
 if __name__ == "__main__":
+    if DEBUG:
+        print("Running in DEBUG mode")
+
     #gather channels
     client = WebClient(token=SLACK_BOT_TOKEN)
     response = client.conversations_list(types="public_channel, private_channel")
